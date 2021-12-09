@@ -22,6 +22,7 @@ const postSchema = mongoose.Schema({
 })
 
 //now that we have a schema we are going to turn it into a model
-//what is a model
+//what is a model--a model is a compiled version of a schema, one instance of a model will map to one
+//document in the database, it is the model that handles CRUD of documents
 const PostMessage = mongoose.model('PostMessage', postSchema);
 export default PostMessage;
