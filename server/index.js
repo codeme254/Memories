@@ -7,14 +7,14 @@ import postRoutes from './routes/posts.js';
 
 const app = express();
 
-app.use('/posts', postRoutes)
 
 //setting up our body parser so that we can properly send our requests
 app.use(bodyParser.json({ limit: "30mb", extended: true}));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true}));
 // limit 30mb because we will be sending some images which will be large in size
-
 app.use(cors())
+
+app.use('/posts', postRoutes)
 
 //connecting our server application with a real database
 //https://www.mongodb.com/cloud/atlas
